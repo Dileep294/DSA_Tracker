@@ -17,6 +17,8 @@ public:
         int node = pq.top().second;
         pq.pop();
 
+        if(d > res[node]) continue;
+
         for(auto &vec : adj[node]){
             int adjNode = vec.first;
             int dist = vec.second;
