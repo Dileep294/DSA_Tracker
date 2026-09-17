@@ -5,17 +5,14 @@ class Solution {
         arr[s.charAt(i)-97]++;
     }
     int maxx = Integer.MIN_VALUE;
+    char ch='0';
     for(int i=0; i<26; i++){
-        maxx = Math.max(arr[i],maxx);
-    }
-    // char ch='';
-    for(int i=0; i<26; i++){
-        if(arr[i]==maxx){
-          char ch = (char)(i+97);
-           return ch;
+        if(arr[i]>maxx){
+        maxx = arr[i];
+        ch = (char)(i+97);
         }
     }
-    return 0;
+    return ch;
     }
 }
 
