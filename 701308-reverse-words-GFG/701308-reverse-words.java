@@ -1,14 +1,18 @@
 class Solution {
     public String reverseWords(String s) {
-    s =s.replaceAll("^\\.+|\\.+$","");
-    String[] word = s.trim().split("\\.+");
-    StringBuilder ans = new StringBuilder();
-    
-    for(int i=word.length-1; i>=0; i--){
-        ans.append(word[i]);
-        if(i!=0) ans.append('.');
+    s = s.replaceAll("^\\.+|\\.+$", "");
+    String[] arr = s.split("\\.+");
+    int n = arr.length;
+    int i=n-1;
+    StringBuilder str = new StringBuilder();
+    while(i>=0){
+        str.append(arr[i]);
+        if(i!=0){
+            str.append(".");
+        }
+        i--;
     }
-    return ans.toString();    
+    return str.toString();
     }
 }
 
