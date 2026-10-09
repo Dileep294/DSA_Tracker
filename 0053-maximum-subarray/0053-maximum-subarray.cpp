@@ -5,8 +5,7 @@ public:
     int maxx = INT_MIN;
     int sum = 0;
     for(int i=0; i<n; i++){
-        sum += nums[i]; 
-        sum = max(nums[i],sum);
+        sum = max(nums[i],sum+nums[i]);
         maxx = max(sum,maxx);
     }     
     return maxx;
